@@ -1,118 +1,171 @@
-# Phase 1 Final Project
+# Welcome to this film industry exploration!
 
-## Introduction
+![hello](https://media1.tenor.com/images/be8fb55b84ccd537d3b0140fd84abb4b/tenor.gif?itemid=17033528)
 
-In this lesson, we review the guidelines for the Phase 1 Final Project.
+# Navigation
 
-## Objectives
+* [Project Overview](#Project-Overview)
+* [Question 1](#Question-1)
+* [Question 2](#Question-2)
+* [Question 3](#Question-3)
+* [Question 4](#Question-4)
+* [Conclusion](#Conclusion)
+* [Future Work](#Future-Work)
 
-You will be able to:
+# Important Links
 
-* Start your Phase 1 Final Project
-* Check that your project meets the requirements
-* Submit your project materials in Canvas
-* Prepare for your project review
+* [Slideshow Presentation](https://github.com/tiaplagata/dsc-phase-1-project-online/blob/master/Microsoft_Movie_Studios.pdf)
+* [Non-Technical Video Walkthrough]()
+* [Jupyter Notebook with Cleaning & Questions](https://github.com/tiaplagata/dsc-phase-1-project-online/blob/master/student.ipynb)
 
-## Project Overview
+# Project Overview
 
-You've made it all the way through the first phase of this course - take a minute to celebrate your awesomeness!
+Microsoft is creating a new movie studio and has hired some new data scientists to explore the film industry. Our goal is to perform some preliminary analysis so Microsoft can take away a few actionable insights for their new movie studios in order to create the best movies possible.
 
-![awesome](https://raw.githubusercontent.com/learn-co-curriculum/dsc-phase-1-project-online/master/awesome.gif)
+In the process, I explored the following questions: 
 
-All that remains in Phase 1 is to put our newfound data science skills to use with a final project! You should expect this project to take between 20 and 25 hours of solid, focused effort. If you're done way quicker, go back and dig in deeper or try some of the optional "Level Up" suggestions. If you're worried that you're going to get to 30 hours and still not even have the data imported, reach out to an instructor in Slack ASAP to get some help!
+# Question 1
 
-### Business Problem
+## What are the qualities of the highest-grossing films?
 
-Microsoft sees all the big companies creating original video content, and they want to get in on the fun. They have decided to create a new movie studio, but the problem is they don’t know anything about creating movies. They have hired you to help them better understand the movie industry.
-Your team is charged with exploring what type of films are currently doing the best at the box office. You must then translate those findings into actionable insights that the head of Microsoft's new movie studio can use to help decide what type of films to create.
+**Scope & Data Used**
 
-### The Data
+To find this conclusion, we can look at the bom_movie_gross dataset from Box Office Mojo. The top-grossing films in this case are those with the highest domestic gross. We are looking at domestic gross over foreign gross because as a new movie studio, we should conquer our home market before trying to overstretch to foreign and domestic markets all at once. 
 
-In the folder `zippedData` are movie datasets from:
+**Findings**
 
-* Box Office Mojo
-* IMDB
-* Rotten Tomatoes
-* TheMovieDB.org
+The 4 studios with the top-grossing films are:
+* Buena Vista (BV) | total domestic gross: $18.4 billion
 
-It is up to you to decide what data from this to use and how to use it. If you want to make this more challenging, you can scrape websites or make API calls to get additional data. If you are feeling overwhelmed, we recommend you use only the following data files:
+* Universal Studios (Uni.) | total domestic gross: $12.9 billion
 
-* imdb.title.basics
-* imdb.title.ratings
-* bom.movie_gross
+* Warner Bros. (WB) | total domestic gross: $12.1 billion
 
-## Deliverables
+* 20th Century Fox (Fox) | total domestic gross: $1.1 billion
 
-There are four deliverables for this project:
+We can further investigate these top-grossing films by looking at the top 10 films for each of the top studios.
 
-1. A **GitHub repository**
-2. A **Jupyter Notebook**
-3. A non-technical presentation **slide deck**
-4. A non-technical presentation **recording**
 
-Keep in mind that the audience for these deliverables is not only your teacher, but also potential employers. Employers will look at your project deliverables to evaluate multiple skills, including coding, modeling, communication, and domain knowledge. You will want to polish these as much as you can, both during the course and afterwards.
+We can easily see a pattern in the qualities and genres of these films. Most of them are action films. They are superhero films (e.g. Avengers, Deadpool, The Dark Knight, etc), sci-fi/fantasy franchises (e.g. Star Wars, Jurassic World, Harry Potter, Dawn of the Planet of the Apes, etc), and animated films for kids & families (e.g. Incredibles, Despicable Me, etc). 
 
-### GitHub Repository
+**Recommendations**
 
-Your GitHub repository is the public-facing version of your project that your instructors and potential employers will see - make it as accessible as you can. At a minimum, it should contain all your project files and a README.md file that summarizes your project and helps visitors navigate the repository.
+Based on these findings, I would recommend making films that reflect these qualities (superhero films, animated films for families, sci-fi/fantasy films, etc. 
 
-### Jupyter Notebook
+Investing in a sci-fi/fantasy or superhero franchise seems to be a great investment. We can see a trend in these films over the past 10 years. 
 
-Your Jupyter Notebook is the primary source of information about your analysis. At a minimum, it should contain or import all of the code used in your project and walk the reader through your project from start to finish. You may choose to use multiple Jupyter Notebooks in your project, but you should have one that provides a full project overview as a point of entry for visitors.
+We can also conclude that buying the licensing rights to an popular sci-fi saga/series to adapt into a movie would be a good investment as well. 
 
-For this project, your Jupyter Notebook should meet the following specifications:
+# Question 2
 
-#### Organization/Code Cleanliness
+## Which films made the most money?
 
-* The notebook should be well organized, easy to follow,  and code should be commented where appropriate.  
-    * Level Up: The notebook contains well-formatted, professional looking markdown cells explaining any substantial code.  All functions have docstrings that act as professional-quality documentation
-* The notebook is written for technical audiences with a way to both understand your approach and reproduce your results. The target audience for this deliverable is other data scientists looking to validate your findings.
+**Scope & Data Used**
 
-#### Visualizations & EDA
+To answer this question, we can look at the tn.movie_budgets database, and narrow down our data set to find all films between 2010 and 2020. 
 
-* Your project contains at least 4 meaningful data visualizations, with corresponding interpretations. All visualizations are well labeled with axes labels, a title, and a legend (when appropriate)  
-* You pose at least 3 meaningful questions and answer them through EDA.  These questions should be well labeled and easy to identify inside the notebook.
-    * **Level Up**: Each question is clearly answered with a visualization that makes the answer easy to understand.   
-* Your notebook should contain 1 - 2 paragraphs briefly explaining your approach to this project.
+**Findings**
 
-### Non-Technical Presentation Slides and Recording
+The first thing we should ask ourselves is: is there a relationship between the movie's production budget and the movie's gross earnings? When mapped in Seaborn's relplot, we can easily see this relationship. 
 
-Your non-technical presentation is your opportunity to communicate clearly and concisely about your project and it's real-world relevance. The target audience should be people with limited technical knowledge who may be interested in leveraging your project. For Phase 1, these would be Microsoft executives interested in making decisions about movie development.
+In "Production Budget and Domestic Gross", we can see that as the production budget increases, so does the domestic gross. We can see that most of the movies with budgets less than 100 million dollars, do not make any more than 500 million dollars in domestic gross earnings. Movies that made over 600 million dollars all had production budgets of 200 million dollars or more. Moreover, if we look at the correlation coefficient between production budget and domestic gross, we can see that there is somewhat strong correlation between the 2 variables (0.73).
 
-Your presentation should:
+In "Production Budget and Worldwide Gross", we can see a similar trend. Our correlation coefficient between these 2 variables was 0.80, which indicates a stronger correlation than with domestic gross. It is interesting to note, that this correlation is not without exception. There were still various films with production budgets between 250 million and 350 million dollars with worldwide gross earnings less than 1 billion dollars. 
 
-* Contain between 5 - 10 professional-quality slides.  
-    * **Level Up**: The slides should use visualizations whenever possible, and avoid walls of text.
-* Take no more than 5 minutes to present.   
-* Avoid technical jargon and explain the results in a clear, actionable way for non-technical audiences.
+We can therefore conclude that there is a strong relationship between production budget and gross earnings, but what about your return on investment? We can also investigate the type of movies that would produce the highest returns. 
 
-We recommend using Google Slides, PowerPoint or Keynote to create your presentation slides. We recommend using Zoom to record your live presentation to a local video file ([instructions here][]) - other options include Quicktime, PowerPoint, or Nimbus. Video files must be under 500 MB and formatted as 3GP, ASF, AVI, FLV, M4V, MOV, MP4, MPEG, QT, or WMV.
+Calculating the ROI using the worldwide gross, we can see that many movies lost money (indicated by a negative ROI), but there were also many movies that made 50x or even 400x on their production budget. When we look at the top 20 movies with the highest ROIs, we can see right away that most of them are horror films. 
 
-## Getting Started
+**Recommendations**
 
-Please start by reviewing this document. If you have any questions, please ask them in Slack ASAP so (a) we can answer the questions and (b) so we can update this document to make it clearer.
+Based on these findings, I would recommend that we should ask ourselves a follow-up question:
 
-**When you start on the project, reach out to an instructor immediately via Slack to let them know and schedule your project review.** If you're not sure who to schedule with, please ask in your cohort channel in Slack.
+   * *How big is our production budget?*
+    
+If we have a lot to invest, we should take into consideration our findings from question 1, and conclude that we can invest in a sci-fi/fantasy/superhero franchise or a film remake, use a large production budget, and make more gross earnings.
 
-Once you're done with the numbered topics in Phase 1, please start on the project. Do that by forking [the Phase 1 Project Repository][], cloning it locally, and working in the `student.ipynb` file. Make sure to also add and commit a PDF of your presentation to your repository with a file name of `presentation.pdf`.
+However, if we do not want to invest so much, we should make a horror film, in order to receive a large ROI. 
 
-We also recommend you check out [this project template and example][]. You can use this template for your project repository and presentation.
+# Question 3
 
-## Project Submission and Review
+## Which film genres have the highest ratings?
 
-Review [the Project Submission and Review guidance][] to learn how to submit your project and how it will be reviewed. Your project must pass review for you to progress to the next Phase.
+**Scope & Data Used**
 
-**Please note: We need to receive your complete submission at least 24 hours before your review to confirm that you are prepared for the review. If you wish to revise your submission, please do so no later than 3 hours before your review so that we can have time to look at your updated materials.**
+To discover which types of films receive the highest ratings, we can look at the average ratings per genre. This question was answered using the imdb.title.basics and imdb.title.ratings databases. 
 
-## Summary
+**Findings**
 
-The end-of-phase projects and project reviews are a critical part of the program. They give you a chance to both bring together all the skills you've learned into realistic projects and to practice key "business judgement" and communication skills that you otherwise might not get as much practice with.
+Upon joining these two tables, we can see a large variety of films ranging from 2010 to 2019, which is the same range we have looked at for the last 2 questions. I decided to limit the data set to include only the ratings from movies with 50,000 votes or more, since the average rating is highly skewed for movies with less votes (i.e. a movie with 5 votes of all 9.0 ratings and up, will give a very high average rating based off little data). 
 
-The projects are serious and important - they can be passed and they can be failed. Take the project seriously, put the time in, ask for help from your peers or instructors early and often if you need it, and treat the review as a job interview and you'll do great. We're rooting for you to succeed and we're only going to ask you to take a review again if we believe that you need to. We'll also provide open and honest feedback so you can improve as quickly and efficiently as possible.
+Once we separate the movie genres into single-genre categories, we can look at the medians and distributions of average ratings for each movie genre. This information tells us which movie genres generally receive higher ratings, and when looking at the violin plot, "Average Ratings Per Genre", we can also see the distribution of each genre's average rating. 
 
-Finally, this is your first project. We don't expect you to remember all of the terms or to get all of the answers right. If in doubt, be honest. If you don't know something, say so. If you can't remember it, just say so. It's very unusual for someone to complete a project review without being asked a question they're unsure of, we know you might be nervous which may affect your performance. Just be as honest, precise and focused as you can be, and you'll do great!
+The movie genre with the highest median for "average rating" (the column name is average rating) is "Documentary", with a median rating of 8.10. Second highest is "Biography", with a median "average rating" of 7.45. And tied for second highest is "War", with a median "average rating" of 7.45. However, there is not much variation between each median "average rating", as all of the medians fall between 6.30 and 8.10. Therefore, even though "Documentary", "Biography" and "War" movies are the highest rated movies, their ratings are not much higher than "Animation", for example, with a median "average rating" of 7.20.
 
-[this project template and example]: https://github.com/learn-co-curriculum/dsc-project-template
-[the Phase 1 Project Repository]: https://github.com/learn-co-curriculum/dsc-phase-1-project-online
-[instructions here]: https://support.zoom.us/hc/en-us/articles/201362473-Local-recording
-[the Project Submission and Review guidance]: https://github.com/learn-co-curriculum/dsc-project-submissions-online
+What the violin plot, "Average Ratings Per Genre", does tell us, is the following:
+
+* the long tails on violins indicate outliers in their ratings (e.g. Documentary, Biography, Music)
+* the taller violins indicate genres with more varied ratings (e.g. War, Western, Sci-Fi)
+* the wider violins indicate a higher probability that the rating will be in that range (e.g. History, Animation)
+
+**Recommendations**
+
+Based on these findings, I would recommend making films with less varied ratings if we are looking to make crowd-pleasing films. 
+
+Documentaries seem to be extremely varied, so we should avoid making those films, whereas Animated films seem to be well-liked with less variation in ratings. 
+
+# Question 4
+
+**Scope & Data Used**
+
+To answer this question, the tn.movie_budgets database was helpful in providing movie release dates, as well as gross domestic earnings. We used domestic gross over worldwide gross since holidays vary from country to country. With this database, I included movies from 2010-2020, which gives us data from 10 occurrences of each month.
+
+**Findings**
+
+When we look at the domestic gross by month over the past 10 years, we can find which months have the highest domestic gross. We can use the median domestic gross per month as a good indicator to rule out outliers. Thus, the highest grossing months are:
+
+* July - $31,206,263
+
+* November - $30,659,817
+
+* August - $21,295,021
+
+* April - $20,316,694
+
+* February - $19,452,138
+
+Whether or not you release the movie directly on a holiday (i.e. Thanksgiving Day) does not really affect it's gross. In the plot, "Movie Releases by Month", we can see lots of green dots in December, indicating that the movie was released on a holiday, yet December had the lowest median domestic gross earnings. 
+
+**Recommendations**
+
+Based on these findings, I would recommend releasing our films over the summer, or November. February also seems to be a great time for releases. 
+
+I would also recommend NOT releasing a film in December, because it had the lowest domestic gross by month. This could be due to the fact that many other studios release films during this time, or because people are generally busy with family, travel, etc over this time, but it would take more research and data to understand why this happens.
+
+# Conclusion
+
+In conclusion, I discovered that the best films to create should reflect the following recommendations:
+
+- If we want to start with a small budget, we should focus on horror films, which produce the highest returns.
+
+- If we want to jump into the industry with a large budget, we should either:
+    * Invest in licensing rights to a sci-fi/fantasy/superhero franchise and create films based on that
+    * Invest in an animation studio and create animated family films, which will also likely garner positive reviews. 
+    
+- We shouldn't worry too much about the ratings because each genre seems to receive a similar range of ratings. However, if we are aiming to please, it might be a good idea to avoid documentaries, on which people have more extreme opinions.
+
+- We should plan on releasing our films in the summer, specifically July or August, or in November, in order capture the highest gross earnings. 
+
+Following these recommendations should lead us on a path for a high probability of success. 
+
+# Future Work
+
+If I had time to explore further, I would investigate the following:
+  
+  - Build a predictive model for movie trends
+    
+  - Calculate a more accurate ROI model based on all costs (i.e. marketing budget, distribution costs, etc)
+    
+  - Dig deeper into film ratings, pulling the Rotten Tomatoes data as well
+    
+  - Figure out which genres to release during each month -- Is there a seasonality to certain genres' release dates?
