@@ -15,7 +15,7 @@
 # Important Links
 
 * [Slideshow Presentation](https://github.com/tiaplagata/dsc-phase-1-project-online/blob/master/Microsoft_Movie_Studios.pdf)
-* [Non-Technical Video Walkthrough]()
+* [Non-Technical Video Walkthrough](https://youtu.be/t898Hvx3u58)
 * [Jupyter Notebook with Cleaning & Questions](https://github.com/tiaplagata/dsc-phase-1-project-online/blob/master/student.ipynb)
 
 # Project Overview
